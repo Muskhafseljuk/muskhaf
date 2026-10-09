@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muskhafseljuk | Computer Engineering Student and Developer</title>
+<meta name="description" content="Portfolio of Muskhafseljuk, Computer Engineering student at PAF-IAST. Embedded systems, C++, IoT and Google Cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060914;--ink:#F1F5FF;--muted:#9AA6C3;--glass:rgba(255,255,255,.06);--edge:rgba(255,255,255,.13);--a:#7C5CFF;--b:#22D3EE;--grad:linear-gradient(120deg,#7C5CFF,#22D3EE);--code:#0B1022}
+@media (prefers-color-scheme:light){:root{--bg:#F5F7FD;--ink:#0B1020;--muted:#53607D;--glass:rgba(255,255,255,.8);--edge:rgba(20,30,70,.13);--a:#5B3DF5;--b:#0891B2;--grad:linear-gradient(120deg,#5B3DF5,#0891B2);--code:#0B1022}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Sora,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+.wrap{max-width:70rem;margin:0 auto;padding:0 1.5rem}
+#net{position:fixed;inset:0;z-index:-2;width:100%;height:100%}
+.spot{position:fixed;z-index:-1;width:34rem;height:34rem;border-radius:50%;pointer-events:none;background:radial-gradient(circle,var(--a) 0%,transparent 65%);opacity:.22;transform:translate(-50%,-50%);left:50%;top:30%}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.nav{position:sticky;top:.8rem;z-index:10;margin-top:.8rem}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1.2rem;border-radius:3rem;background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.logo{font-weight:800;text-decoration:none;font-family:"JetBrains Mono",monospace}
+.nav a.l{margin-left:1.3rem;text-decoration:none;color:var(--muted);font-size:.95rem}
+.nav a.l:hover{color:var(--ink)}
+.cta-s{margin-left:1.3rem;padding:.45rem 1rem;border-radius:2rem;background:var(--grad);color:#fff;text-decoration:none;font-size:.9rem;font-weight:600}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:5.5rem 0 4rem}
+.badge{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:2rem;border:1px solid var(--edge);background:var(--glass);font-size:.88rem;color:var(--muted)}
+.badge b{width:.55rem;height:.55rem;border-radius:50%;background:#34D399;box-shadow:0 0 0 4px rgba(52,211,153,.2)}
+.hero h1{font-size:clamp(2.6rem,7.5vw,5.2rem);line-height:1.03;font-weight:800;letter-spacing:-.04em;margin:1.3rem 0 1rem;word-break:break-word}
+.role{font-family:"JetBrains Mono",monospace;font-size:1.2rem;min-height:2rem}
+.role::after{content:"";display:inline-block;width:.6rem;height:1.2rem;background:var(--b);margin-left:.2rem;vertical-align:-.2rem;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero p.d{color:var(--muted);font-size:1.1rem;max-width:32rem;margin-top:1rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
+.btn{display:inline-block;padding:.9rem 1.6rem;border-radius:.9rem;font-weight:600;text-decoration:none;transition:transform .2s}
+.btn.p{background:var(--grad);color:#fff;box-shadow:0 10px 30px -10px var(--a)}
+.btn.g{border:1px solid var(--edge);background:var(--glass)}
+.btn:hover{transform:translateY(-3px)}
+
+/* code window */
+.win{border-radius:1.2rem;background:var(--code);border:1px solid var(--edge);box-shadow:0 30px 70px -25px var(--a);overflow:hidden;transform:perspective(900px) rotateY(-6deg) rotateX(3deg);transition:transform .3s;color:#E6EDFF}
+.win:hover{transform:perspective(900px) rotateY(0) rotateX(0)}
+.dots{display:flex;gap:.45rem;padding:.8rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);align-items:center}
+.dots i{width:.7rem;height:.7rem;border-radius:50%;background:#FF5F57}
+.dots i:nth-child(2){background:#FEBC2E}.dots i:nth-child(3){background:#28C840}
+.dots span{margin-left:.6rem;font:.78rem "JetBrains Mono",monospace;color:#8A97B8}
+pre{font:.88rem/1.7 "JetBrains Mono",ui-monospace,monospace;padding:1.1rem 1.2rem;overflow-x:auto;white-space:pre}
+.k{color:#C792EA}.s{color:#C3E88D}.t{color:#22D3EE}.c{color:#6B7899}.f{color:#82AAFF}
+.out{border-top:1px solid rgba(255,255,255,.1);padding:.9rem 1.2rem;font:.85rem "JetBrains Mono",monospace;color:#34D399;min-height:3.6rem;white-space:pre-wrap}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:4rem}
+.fact{padding:1.3rem;border-radius:1.2rem;background:var(--glass);border:1px solid var(--edge)}
+.fact small{color:var(--muted);display:block}
+.fact strong{font-size:1.1rem}
+
+section{padding:3.2rem 0}
+.title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;margin-bottom:.6rem}
+.sub{color:var(--muted);max-width:36rem;margin-bottom:2rem}
+.about{font-size:1.12rem;color:var(--muted);max-width:44rem}
+.about p+p{margin-top:1rem}
+
+.tl{border-left:2px solid var(--edge);margin-left:.5rem;padding-left:1.8rem;position:relative}
+.tl::before{content:"";position:absolute;left:-.45rem;top:.35rem;width:.85rem;height:.85rem;border-radius:50%;background:var(--grad);box-shadow:0 0 0 6px rgba(124,92,255,.2)}
+.tl h3{font-size:1.3rem}
+.tl p{color:var(--muted)}
+.tl .when{font:.85rem "JetBrains Mono",monospace;color:var(--b)}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.2rem}
+.sk{padding:1.4rem;border-radius:1.2rem;background:var(--glass);border:1px solid var(--edge)}
+.sk h3{font-size:1.1rem;margin-bottom:.8rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips span{padding:.3rem .8rem;border-radius:2rem;border:1px solid var(--edge);font-size:.88rem;color:var(--muted);transition:.2s}
+.chips span:hover{color:#fff;background:var(--grad);border-color:transparent}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.3rem}
+.card{display:flex;flex-direction:column;border-radius:1.4rem;background:var(--glass);border:1px solid var(--edge);overflow:hidden;transition:transform .15s,border-color .25s;transform-style:preserve-3d;will-change:transform}
+.card:hover{border-color:var(--a)}
+.thumb{height:8rem;background:var(--grad);display:grid;place-items:center;font:800 2rem "JetBrains Mono",monospace;color:rgba(255,255,255,.92)}
+.card:nth-child(2) .thumb{background:linear-gradient(120deg,#F472B6,#7C5CFF)}
+.card:nth-child(3) .thumb{background:linear-gradient(120deg,#22D3EE,#34D399)}
+.card .in{padding:1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.card p{color:var(--muted);font-size:.96rem;flex:1}
+.card a{font-weight:600;text-decoration:none;color:var(--b)}
+
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.2rem}
+.cert{display:flex;gap:1rem;align-items:center;padding:1.3rem;border-radius:1.2rem;background:var(--glass);border:1px solid var(--edge);transition:transform .2s,border-color .2s}
+.cert:hover{transform:translateY(-4px);border-color:var(--b)}
+.cert svg{flex:none}
+.cert h3{font-size:1.02rem;line-height:1.35}
+.cert small{color:var(--muted)}
+.contact{margin:2rem 0 4rem;padding:3.5rem 2rem;border-radius:2rem;text-align:center;background:var(--glass);border:1px solid var(--edge)}
+.contact p{color:var(--muted);margin:0 auto 1.8rem;max-width:30rem}
+.soc{display:flex;gap:1.5rem;justify-content:center;margin-top:1.6rem;flex-wrap:wrap}
+.soc a{color:var(--muted);text-decoration:none;font-weight:600}
+.soc a:hover{color:var(--ink)}
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding-bottom:2rem}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.role::after{animation:none}html{scroll-behavior:auto}}
+@media (max-width:50rem){.hero{grid-template-columns:1fr;padding-top:3.5rem}.win{transform:none}.nav a.l{display:none}.facts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas>
+<div class="spot" id="spot" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="nav"><div class="bar">
+    <a class="logo" href="#top">&lt;muskhaf/&gt;</a>
+    <nav aria-label="Main">
+      <a class="l" href="#about">About</a><a class="l" href="#skills">Skills</a><a class="l" href="#certs">Certifications</a><a class="l" href="#work">Work</a>
+      <a class="cta-s" href="#contact">Contact</a>
+    </nav>
+  </div></header>
+
+  <main id="top">
+    <div class="hero">
+      <div>
+        <span class="badge"><b></b>Open to projects and internships</span>
+        <h1>Hi, I am <span class="grad">Muskhafseljuk</span></h1>
+        <div class="role" id="role" aria-live="off"></div>
+        <p class="d">Computer Engineering student at PAF-IAST. I work with C and C++, embedded systems, IoT and Google Cloud.</p>
+        <div class="btns">
+          <a class="btn p" href="#work">View my work</a>
+          <a class="btn g" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="win" aria-label="C++ code sample">
+        <div class="dots"><i></i><i></i><i></i><span>main.cpp</span></div>
+<pre><span class="k">#include</span> <span class="s">&lt;iostream&gt;</span>
+<span class="k">#include</span> <span class="s">&lt;string&gt;</span>
+
+<span class="k">int</span> <span class="f">main</span>() {
+    <span class="t">std::string</span> name = <span class="s">"Muskhafseljuk"</span>;
+    <span class="t">std::string</span> uni  = <span class="s">"PAF-IAST"</span>;
+    <span class="c">// Computer Engineering</span>
+    <span class="t">std::cout</span> &lt;&lt; name &lt;&lt; <span class="s">" @ "</span> &lt;&lt; uni;
+    <span class="k">return</span> 0;
+}</pre>
+        <div class="out" id="out"></div>
+      </div>
+    </div>
+
+    <div class="facts rv">
+      <div class="fact"><small>Studying</small><strong>Computer Engineering</strong></div>
+      <div class="fact"><small>University</small><strong>PAF-IAST, Haripur</strong></div>
+      <div class="fact"><small>Main languages</small><strong>C, C++ and Python</strong></div>
+    </div>
+
+    <section id="about" class="rv">
+      <h2 class="title">About me</h2>
+      <div class="about">
+        <p>I am a Computer Engineering student who likes to understand how things work, from microcontrollers and low-level C and C++ programs to cloud and AI systems.</p>
+        <p>I am looking for projects and internships where I can build real things and keep learning.</p>
+      </div>
+    </section>
+
+    <section class="rv">
+      <h2 class="title">Education</h2>
+      <div class="tl" style="margin-top:1.5rem">
+        <div class="when">Currently studying</div>
+        <h3>BS Computer Engineering</h3>
+        <p>Pak-Austria Fachhochschule: Institute of Applied Sciences and Technology (PAF-IAST), Haripur, Khyber Pakhtunkhwa</p>
+      </div>
+    </section>
+
+    <section id="skills" class="rv">
+      <h2 class="title">Skills</h2>
+      <p class="sub">What I work with.</p>
+      <div class="skills">
+        <div class="sk"><h3>Programming</h3><div class="chips"><span>C++</span><span>C</span><span>Python</span><span>Programming</span><span>Problem Solving</span></div></div>
+        <div class="sk"><h3>Embedded and hardware</h3><div class="chips"><span>Microcontrollers</span><span>Embedded Systems</span><span>Internet of Things (IoT)</span><span>Circuit Design</span><span>Hardware-Software Integration</span><span>Computer Architecture</span></div></div>
+        <div class="sk"><h3>Cloud and AI</h3><div class="chips"><span>Google Cloud Platform (GCP)</span><span>Artificial Intelligence (AI)</span></div></div>
+        <div class="sk"><h3>Engineering and tools</h3><div class="chips"><span>Computer Engineering</span><span>Microsoft Office</span></div></div>
+        <div class="sk"><h3>Soft skills</h3><div class="chips"><span>Communication</span><span>Teamwork</span><span>Analytical Skills</span><span>Mathematics</span></div></div>
+      </div>
+    </section>
+
+    <section id="certs" class="rv">
+      <h2 class="title">Certifications</h2>
+      <p class="sub">Issued by Google.</p>
+      <div class="certs">
+        <div class="cert"><svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3l25 14.5v29L32 61 7 46.500v-29z" fill="none" stroke="#4285F4" stroke-width="3"/><path d="M32 16l4 12 12 4-12 4-4 12-4-12-12-4 12-4z" fill="#EA4335"/></svg><div><h3>Gemini Enterprise Agent Ready</h3><small>Google</small></div></div>
+        <div class="cert"><svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3l25 14.5v29L32 61 7 46.500v-29z" fill="none" stroke="#FBBC04" stroke-width="3"/><path d="M20 41a8 8 0 0 1 1-16 11 11 0 0 1 21 3 7 7 0 0 1-1 13z" fill="#4285F4"/></svg><div><h3>Google Cloud Innovator</h3><small>Google</small></div></div>
+        <div class="cert"><svg width="56" height="56" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3l25 14.5v29L32 61 7 46.500v-29z" fill="none" stroke="#34A853" stroke-width="3"/><path fill-rule="evenodd" d="M32 14a10 10 0 0 0-10 10c0 8 10 20 10 20s10-12 10-20a10 10 0 0 0-10-10zm0 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z" fill="#EA4335"/></svg><div><h3>Google Maps Platform Innovators</h3><small>Google</small></div></div>
+      </div>
+    </section>
+
+    <section id="work" class="rv">
+      <h2 class="title">Selected work</h2>
+      <p class="sub">A few basic projects. Edit them to match your own work.</p>
+      <div class="projects">
+        <article class="card"><div class="thumb">&lt;/&gt;</div><div class="in"><h3>Student Management System</h3><p>A console program in C++ to add, search, edit and delete student records using classes and file storage.</p><div class="chips"><span>C++</span><span>OOP</span><span>File handling</span></div><a href="https://github.com/Muskhafseljuk" target="_blank" rel="noopener">View on GitHub</a></div></article>
+        <article class="card"><div class="thumb">IoT</div><div class="in"><h3>Smart Room Monitor</h3><p>A microcontroller project that reads temperature and light levels with sensors and shows the values on a small display.</p><div class="chips"><span>Microcontrollers</span><span>IoT</span><span>C</span></div><a href="https://github.com/Muskhafseljuk" target="_blank" rel="noopener">View on GitHub</a></div></article>
+        <article class="card"><div class="thumb">{ }</div><div class="in"><h3>Python Data Analyzer</h3><p>A small Python script that reads a CSV file, calculates basic statistics and prints a clear summary.</p><div class="chips"><span>Python</span><span>Mathematics</span><span>Analysis</span></div><a href="https://github.com/Muskhafseljuk" target="_blank" rel="noopener">View on GitHub</a></div></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact rv">
+      <h2 class="title">Let us build something</h2>
+      <p>Have a project or an opportunity? Send me a message.</p>
+      <div class="btns" style="justify-content:center;margin-top:0"><a class="btn p" href="mailto:muhammadmuskhafseljuk@gmail.com">muhammadmuskhafseljuk@gmail.com</a><a class="btn g" href="https://wa.me/923091824992" target="_blank" rel="noopener">WhatsApp 0309 1824992</a></div>
+      <div class="soc"><a href="https://github.com/Muskhafseljuk" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/muskhaf-seljuk" target="_blank" rel="noopener">LinkedIn</a><a href="https://wa.me/923091824992" target="_blank" rel="noopener">WhatsApp</a></div>
+    </section>
+  </main>
+  <footer><script>document.write("&copy; "+new Date().getFullYear()+" Muskhafseljuk")</script></footer>
+</div>
+
+<script>
+(function(){
+var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+/* particle network */
+var cv=document.getElementById("net"),cx=cv.getContext("2d"),W,H,P=[],m={x:-999,y:-999};
+function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];var n=Math.min(70,Math.floor(W*H/22000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35})}
+size();addEventListener("resize",size);
+addEventListener("pointermove",function(e){m.x=e.clientX;m.y=e.clientY;var s=document.getElementById("spot");s.style.left=e.clientX+"px";s.style.top=e.clientY+"px"});
+function col(){return matchMedia("(prefers-color-scheme:light)").matches?"60,70,180":"140,170,255"}
+function draw(){
+  cx.clearRect(0,0,W,H);var c=col();
+  for(var i=0;i<P.length;i++){var p=P[i];
+    if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1}
+    cx.fillStyle="rgba("+c+",.7)";cx.beginPath();cx.arc(p.x,p.y,1.6,0,6.3);cx.fill();
+    for(var j=i+1;j<P.length;j++){var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);
+      if(d<120){cx.strokeStyle="rgba("+c+","+(.22*(1-d/120))+")";cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+    var dm=Math.hypot(p.x-m.x,p.y-m.y);
+    if(dm<160){cx.strokeStyle="rgba(34,211,238,"+(.5*(1-dm/160))+")";cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(m.x,m.y);cx.stroke()}
+  }
+  if(!reduce)requestAnimationFrame(draw)
+}
+draw();
+
+/* typing roles */
+var roles=["Computer Engineering student","C and C++ developer","Embedded and IoT enthusiast","Google Cloud Innovator"],ri=0,ci=0,del=false,el=document.getElementById("role");
+function type(){var r=roles[ri];
+  if(reduce){el.textContent=r;return}
+  el.textContent=r.slice(0,ci);
+  if(!del&&ci<r.length){ci++;setTimeout(type,70)}
+  else if(!del){del=true;setTimeout(type,1400)}
+  else if(ci>0){ci--;setTimeout(type,35)}
+  else{del=false;ri=(ri+1)%roles.length;setTimeout(type,300)}}
+type();
+
+/* console output */
+var out=document.getElementById("out"),txt="Muskhafseljuk @ PAF-IAST\n> Process finished with exit code 0",k=0;
+function pr(){if(reduce){out.textContent=txt;return}out.textContent=txt.slice(0,k++);if(k<=txt.length)setTimeout(pr,45)}
+setTimeout(pr,700);
+
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(n){io.observe(n)});
+
+/* card tilt */
+if(!reduce)document.querySelectorAll(".card").forEach(function(c){
+  c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    c.style.transform="perspective(700px) rotateY("+x*10+"deg) rotateX("+(-y*10)+"deg) translateY(-4px)"});
+  c.addEventListener("pointerleave",function(){c.style.transform=""})});
+})();
+</script>
+</body>
+</html>
